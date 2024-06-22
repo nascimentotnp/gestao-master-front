@@ -37,13 +37,8 @@ class Navbar extends Component<NavbarProps, NavbarState> {
       .map((item: NavbarItem, index: number) => {
         return (
           <li className="nav-item me-lg-3 my-lg-0 my-2" key={index}>
-            <NavLink
-              className="nav-link text-capitalize position-relative hover"
-              to={`/${item.name === "" ? "" : item.name}`}
-            >
-              <i className={`${item.icon} me-2`}></i>
-              {item.name === "" ? "home" : item.name}
-            </NavLink>
+            <NavLink className = "nav-link text-capitalize position-relative hover" to = {`/${item.name === '' ? '': item.name}`}><i className = {`${item.icon} me-2`}></i>{item.name === '' ? 'home': item.name}</NavLink>
+
           </li>
         );
       });
@@ -74,9 +69,9 @@ class Navbar extends Component<NavbarProps, NavbarState> {
           this.state.s ? "shadow-xs" : "shadow"
         }`}
       >
-        <div className="container py-2">
-          <Link className="navbar-brand" to="/">
-            <span>Gestão</span>Master<span>1.0</span>
+        <div className="container">
+          <Link className="navbar-brand px-0" to="/">
+            <span>Gestão</span>Master<span>0.1</span>
           </Link>
           <button
             className="navbar-toggler"
@@ -87,16 +82,17 @@ class Navbar extends Component<NavbarProps, NavbarState> {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            {/* <span className="navbar-toggler-icon"></span> */}
           </button>
 
           <div
-            className="collapse navbar-collapse justify-content-end"
+            className="collapse navbar-collapse"
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav">{this.display_navbar_items()}</ul>
+            <ul className="navbar-nav ml-auto
+            ">{this.display_navbar_items()}</ul>
 
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav">
               {showModeratorBoard && (
                 <li className="nav-item">
                   <Link to={"/mod"} className="nav-link">

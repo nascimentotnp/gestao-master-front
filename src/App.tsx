@@ -20,6 +20,12 @@ import Login from "./components/login/login.component";
 import Banner from "./components/banner/Banner";
 import Formulary from "./components/form/Form";
 import Footer from "./components/footer/Footer";
+import About from "./components/about/About";
+import Landing from "./components/landing/Landing";
+import Blogs from "./components/blogs/Blogs";
+import Courses from "./components/courses/Courses";
+import Contact from "./components/contact/Contact";
+import Notfound from "./components/notfound/Notfound";
 
 type Props = {};
 
@@ -73,7 +79,6 @@ class App extends Component<Props, State> {
 
     return (
       <div>
-
         <ScroolButton />
         <div className="_navbar">
           <Navbar
@@ -86,7 +91,7 @@ class App extends Component<Props, State> {
 
         <div className="container mt-3">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -94,6 +99,11 @@ class App extends Component<Props, State> {
             <Route path="/user" element={<BoardUser />} />
             <Route path="/mod" element={<BoardModerator />} />
             <Route path="/admin" element={<BoardAdmin />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blogs/*" element={<Blogs />} />
+            <Route path="/courses/*" element={<Courses />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Notfound />} />
           </Routes>
         </div>
         <div className="_footer">
