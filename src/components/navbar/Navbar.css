@@ -12,12 +12,18 @@
       color: grey; } }
   .navbar {
     background-color: white;
-    transition: ease 0.3s; }
+    transition: ease 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
     .navbar .container .navbar-brand {
       font-weight: bolder;
       letter-spacing: 2px;
       font-size: 20px;
-      color: black; }
+      margin-left: auto;
+      color: black; 
+    }
       .navbar .container .navbar-brand span {
         color: #e91e63; }
       .navbar .container .navbar-brand i {
