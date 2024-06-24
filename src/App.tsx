@@ -26,6 +26,7 @@ import Blogs from "./components/blogs/Blogs";
 import Courses from "./components/courses/Courses";
 import Contact from "./components/contact/Contact";
 import Notfound from "./components/notfound/Notfound";
+import Plans from "./components/plans/Plans";
 
 type Props = {};
 
@@ -94,16 +95,18 @@ class App extends Component<Props, State> {
             <Route path="/" element={<Landing />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/signup" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/user" element={<BoardUser />} />
             <Route path="/mod" element={<BoardModerator />} />
             <Route path="/admin" element={<BoardAdmin />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blogs/*" element={<Blogs />} />
+            <Route path="/sobre" element={<About />} />
+            {/* <Route path="/blogs/*" element={<Blogs />} /> */}
             <Route path="/courses/*" element={<Courses />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contato" element={<Contact />} />
             <Route path="*" element={<Notfound />} />
+            <Route path="/plans" element={<Plans />} />
+
           </Routes>
         </div>
         <div className="_footer">
