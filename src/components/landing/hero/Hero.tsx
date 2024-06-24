@@ -23,8 +23,8 @@ class Hero extends Component<{}> {
                 </p>
                 <div className="buttons">
                   <Link
-                    className="btn btn-danger text-capitalize me-3 shadow btn-custom"
-                    to="/about"
+                    className="btn btn-primary text-capitalize me-3 shadow btn-custom"
+                    to="/sobre"
                   >
                     Saiba mais<i className="ms-2 fas fa-chevron-right"></i>
                   </Link>
