@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { navbar_items } from "./Data";
+import { navbar_items, NavbarItem } from "./Data";
 import IUser from "../../types/user.type";
-
-interface NavbarItem {
-  name: string;
-  icon: string;
-  public?: boolean;
-}
 
 interface NavbarProps {
   currentUser: IUser | undefined;
@@ -35,10 +29,21 @@ class Navbar extends Component<NavbarProps, NavbarState> {
         return currentUser;
       })
       .map((item: NavbarItem, index: number) => {
+        const IconComponent = item.icon;
+
         return (
           <li className="nav-item me-lg-3 my-lg-0 my-2" key={index}>
-            <NavLink className = "nav-link text-capitalize position-relative hover" to = {`/${item.name === '' ? '': item.name}`}><i className = {`${item.icon} me-2`}></i>{item.name === '' ? 'home': item.name}</NavLink>
-
+            <NavLink
+              className="nav-link text-capitalize position-relative hover"
+              to={`/${item.name === '' ? '' : item.name}`}
+              title={item.name === '' ? 'home' : item.name} // Adicione a propriedade title aqui
+            >
+              <IconComponent
+                className={`me-2 nav-item-icon ${item.animated ? 'animate-icon' : ''}`}
+                title={item.name === '' ? 'home' : item.name} // Adicione a propriedade title aqui também
+              />
+              {/* <span className="nav-item-text">{item.name === '' ? 'home' : item.name}</span> */}
+            </NavLink>
           </li>
         );
       });
@@ -64,11 +69,7 @@ class Navbar extends Component<NavbarProps, NavbarState> {
     const { currentUser, showModeratorBoard, showAdminBoard, logOut } = this.props;
 
     return (
-      <nav
-        className={`navbar navbar-expand-lg navbar-light text-dark fixed-top ${
-          this.state.s ? "shadow-xs" : "shadow"
-        }`}
-      >
+      <nav className={`navbar navbar-expand-lg navbar-light text-dark fixed-top ${this.state.s ? "shadow-xs" : "shadow"}`}>
         <div className="container">
           <Link className="navbar-brand px-0" to="/">
             <span>Gestão</span>Master<span>0.1</span>
@@ -82,15 +83,11 @@ class Navbar extends Component<NavbarProps, NavbarState> {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            {/* <span className="navbar-toggler-icon"></span> */}
           </button>
 
-          <div
-            className="collapse navbar-collapse"
-            id="navbarSupportedContent"
-          >
-            <ul className="navbar-nav ml-auto
-            ">{this.display_navbar_items()}</ul>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ml-auto">{this.display_navbar_items()}</ul>
 
             <ul className="navbar-nav">
               {showModeratorBoard && (

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @keyframes translation {
   0%, 100% {
     transform: translateX(0);
@@ -7,36 +9,43 @@
     opacity: 0.3; } }
 @keyframes coloring {
   0%, 100% {
-    color: #0a4d68; }
+    color: #281717; }
   50% {
     color: grey; } }
 .hero .container .row .c .left-side .title {
   font-size: 30px;
-  font-weight: bolder; }
+  font-weight: bolder; 
+  font-family: Raleway;
+}
   .hero .container .row .c .left-side .title span {
-    color: #0a4d68; }
+    color: #281717;
+   
+  }
 .hero .container .row .c .left-side .sub-title {
-  font-weight: bold; }
+  font-weight: bold; 
+}
 .hero .container .row .c .left-side .desc {
   font-size: 17px; }
 
 .btn-custom {
-  background-color: #0a4d68;
-  border-color: #0a4d68;
-  color: white; /* Ensure the text is visible on the button */
+  background-color: #281717;
+  border-color: #281717;
+  color: white; 
+  font-family: Raleway;
+
 }
 
 .btn-custom:hover {
-  background-color: #0a4d68;
-  border-color: #0a4d68;
+  background-color: #281717;
+  border-color: #281717;
 }
 .btn-outline-custom {
-  border-color: #0a4d68; 
-  color: #0a4d68; 
+  border-color: #281717; 
+  color: #281717; 
 }
 
 .btn-outline-custom:hover {
-  background-color: #0a4d68; 
+  background-color: #281717; 
   color: white; 
 }
 
